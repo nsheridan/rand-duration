@@ -10,6 +10,10 @@ var (
 	defaultMax = time.Minute * 5
 )
 
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
 // RandomDuration is a random duration generator.
 type RandomDuration struct {
 	Min, Max time.Duration
@@ -17,7 +21,6 @@ type RandomDuration struct {
 
 // Generate a random time.Duration between Min and Max, rounded to the nearest 100ms.
 func (d *RandomDuration) Generate() time.Duration {
-	rand.Seed(time.Now().UnixNano())
 	min := d.Min
 	max := d.Max
 	if min <= 0 {
