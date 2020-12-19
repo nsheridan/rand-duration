@@ -1,3 +1,3 @@
-module github.com/nsheridan/rand-duration
+module github.com/nsheridan/randduration
 
 go 1.15
